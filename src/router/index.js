@@ -1,15 +1,16 @@
-import Vue from 'vue'
-import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
+import id from '@/components/id'
 
-Vue.use(Router)
-
-export default new Router({
-  routes: [
+const routers = [
     {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+		path: '/child3',
+		name: 'HelloWorld',
+		component: HelloWorld
+    },
+    {
+    	path: '/child3/:id',
+    	component:id
     }
-  ]
-})
+]
+
+export default routers

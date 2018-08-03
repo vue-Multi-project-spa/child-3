@@ -1,25 +1,30 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <button @click="r('/test/aaa/bbb')">路由/test/aaa/bbb3</button>
-    <router-view></router-view>
+    <button @click="r('/test/aaa')">路由/test/aaa</button>
+    <button @click="r('/')">路由/</button>
+    <button @click="back">回退</button>
 
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'this is child3 -id '
     }
+  },
+  created(){
+    console.log(this.$route)
   },
   methods:{
     r(path){
       this.$router.push({path:path})
     },
+    back(){ 
+      VK.back()
+    }
   }
 }
 </script>
